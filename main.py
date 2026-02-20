@@ -11,7 +11,7 @@ def build_model(model_name:str):
     model = ChatGroq(
         model=model_name,
         max_tokens=400,
-        api_key=os.getenv("GROQ_API_KEY")
+        api_key = st.secrets["GROQ_API_KEY"]
     )
     return model
 
