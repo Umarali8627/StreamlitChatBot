@@ -48,8 +48,9 @@ for message in st.session_state.messages:
 user_query =st.chat_input("Ask anything ")
 if user_query:
     st.session_state.messages.append({"role": "user", "content": user_query})
-    with st.chat_message("user"):
-       st.markdown(user_query)
+    with st.chat_message("user"): 
+      st.markdown(user_query)
+    with st.chat_message("assistant"):
        with st.spinner("Thinking"):
            try:
                response = chat(user_query, model_name)
