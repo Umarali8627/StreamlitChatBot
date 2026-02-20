@@ -53,7 +53,7 @@ if user_query:
            try:
                response = chat(user_query, model_name)
            except Exception as ex:
-               st.markdown("Error while answering")
+               st.markdown("Error while answering",str(ex)
                response = "Sorry, I couldn't process your request."  # fallback
            st.markdown(response)
            st.session_state.messages.append({"role": "assistant", "content": response})
